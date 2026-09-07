@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Student Attendance Tracker</h1>
+
+  <input type="text" id="name" placeholder="Student Name">
+  <input type="text" id="roll" placeholder="Roll Number">
+
+  <button onclick="markAttendance('Present')">Present</button>
+  <button onclick="markAttendance('Absent')">Absent</button>
+  <h3 id="summary">
+  Present: 0 | Absent: 0 | Attendance: 0%
+</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="attendanceList"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
