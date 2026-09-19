@@ -1,50 +1,233 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background:#f4f8fb;
-    text-align:center;
-    padding:20px;
+    background: #101827;
+    color: white;
+    padding: 20px;
 }
 
-h1{
-    color:#1e3a8a;
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
 
-input{
-    padding:10px;
-    margin:8px;
-    width:220px;
+header {
+    text-align: center;
+    background: #172554;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-button{
-    padding:10px 18px;
-    margin:8px;
-    border:none;
-    border-radius:6px;
-    color:white;
-    cursor:pointer;
+header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-button:first-of-type{
-    background:green;
+header p {
+    color: #cbd5e1;
+    margin-top: 6px;
 }
 
-button:last-of-type{
-    background:red;
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
 }
 
-table{
-    width:80%;
-    margin:20px auto;
-    border-collapse:collapse;
-    background:white;
+.card {
+    background: #1e293b;
+    padding: 22px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #00000040;
 }
 
-th,td{
-    border:1px solid #ccc;
-    padding:10px;
+.card h3 {
+    color: #cbd5e1;
+    margin-bottom: 12px;
 }
 
-th{
-    background:#2563eb;
-    color:white;
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.present-card p {
+    color: #22c55e;
+}
+
+.absent-card p {
+    color: #ef4444;
+}
+
+.form-section,
+.filter-section,
+.table-section,
+.chart-section {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #93c5fd;
+}
+
+input,
+select {
+    padding: 12px;
+    margin: 6px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+button {
+    padding: 12px 18px;
+    margin: 6px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.absent-btn {
+    background: #dc2626;
+}
+
+.absent-btn:hover {
+    background: #b91c1c;
+}
+
+.clear-btn {
+    background: #7f1d1d;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #475569;
+}
+
+th {
+    background: #172554;
+    color: #bfdbfe;
+}
+
+td {
+    color: #e2e8f0;
+}
+
+.present-status {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.absent-status {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background: #dc2626;
+    padding: 8px 12px;
+}
+
+.chart-container {
+    max-width: 750px;
+    height: 350px;
+    margin: auto;
+    position: relative;
+}
+
+.action-section {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 800px) {
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    input,
+    select {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    button {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
+
+@media print {
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    header,
+    .dashboard,
+    .form-section,
+    .filter-section,
+    .chart-section,
+    .action-section {
+        display: none;
+    }
+
+    .table-section {
+        background: white;
+        color: black;
+    }
+
+    h2 {
+        color: black;
+    }
 }
